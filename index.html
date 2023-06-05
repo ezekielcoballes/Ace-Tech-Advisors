@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="homestyle.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,16 +38,6 @@ p {
   color: #fff;
 }
 
-.button {
-  background-color: FloralWhite;
-  border: none;
-  color: white;
-  padding: 13px 37px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  margin: 20px 450px;
-  cursor: pointer;
 }
 a:link {
   color: green;
@@ -69,11 +61,21 @@ td {
 td {
    color: black;
 }  
+.button {
+                width: 10%;
+                border-radius: 1rem;
+                padding: .6%;
+                color: #fff;
+                background-color: #03612e;
+                border: none;
+                cursor: pointer;
+                color: rgb(246, 246, 252);
+            }
+
 </style>
 </head>
+
 <body>
-
-
     <nav>
         <div class="logo">
             <h3><a href="my website.html">Ace Tech Advisors</h3></a>
@@ -93,33 +95,95 @@ td {
 
     <section style="height: 700px; background-image: url(https://i.ibb.co/dczw952/ace-2.png); background-repeat: no-repeat; background-size: cover;">
 	
-	<form method="GET">
 <p2 style="font-family:verdana;">ANSWER HONESTLY.</p2>
 
-<form action="https://api.sheetmonkey.io/form/vWpf6S7ntu4SJYssXFxr3s" method="POST">
-  <label>Your Name: <input type="text" name="Name" required /></label>
-  <label>Your Email: <input type="email" name="Email" required /></label>
-  <input type="hidden" name="Created" value="x-sheetmonkey-current-date-time" />
-  <input type="submit" value="Sign Up" />
+ <table bgcolor="">
+<form method="post" autocomplete="off" name="google-sheet">
+<tr>
+<td>First Name:</td>
+<td><input type="text" name="First Name" placeholder="First Name" required=""></td>
+</tr>
+<tr>
+<td>Last Name:</td>
+<td><input type="text" name="Last Name" placeholder="Last Name" required=""></td>
+</tr>
+<tr>
+<td>Date Today:</td>
+<td><input type="date" name="Date" min="01-01-1960" max="12-25-2023" required=""></td>
+</tr>
+<tr>
+<td>Budget:</td>
+<td><input type="text" name="Budget" placeholder="Enter your Budget" required=""></td>
+</tr>
+<tr>
+<td>Contact Number:</td>
+<td><input type="text" name="Contact Number" placeholder="***********" required=""></td>
+</tr>
+<tr>
+<td>Gender:</td>
+<td><input type="radio" name="Gender" value="male" required="">Male
+<input type="radio" name="Gender" value="female" required="">Female</td>
+</tr>
+<tr>
+<td>Reason to why you want to have a computer built:</td>
+<td><input type="text" name="Reason" placeholder="Enter Reason" required=""></td>
+</tr>
+<tr>
+<td>City:</td>
+<td><input type="text" name="City" placeholder="Enter your City" required=""></td>
+</tr>
+<tr>
+<tr>
+<td>Service Needed:</td>
+<td><select name="Service" required="">
+<option>PC Recommendation</option>
+<option>Troubleshooting</option>
+<option>PC Building</option>
+<option>Tips and Tricks</option>
+</select></td>
+</tr>
+<tr>
+<td>Factors you want in a PC:</td>
+<td><select name="Factors" required="">
+<option>Budget Friendly</option>
+<option>Brand and Warranty</option>
+<option>Compatibility</option>
+<option>Aesthetics</option>
+</select></td>
+</tr>
+<button type="submit" name="submit" class="btn button"> Submit</button> 
 </form>
-
+</table>
     </section>
-	
 
+ <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbwHoee3PV_Kj7ed2ifzyEOkhYRZClA-oQoPtBcop_gAmd5qQHQbYsuKoJldzFp8iAY1vg/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+		  
+		       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <footer>
         <div class="content">
-            <h3>The Beginning</h3>
-            <p>Welcome to the beginning of your journey. <br>
-               Observe from the hills, look at each and every view from different places. <br>
-               It is truly exhilarating, I humbly request to travel as you please.</p>
+            <h3>Ace Tech Advisors</h3>
+            <p>Building your dreams PC. <br>
+               One part at a time. <br>
+               Contact us now!</p>
             <ul class="links"> 
                 <li><a href="https://www.facebook.com/profile.php?id=100091789145422"><i class="fa fa-facebook"></i></a></li>
             </ul>
         </div>
         
         <div class="copyright">
-            <p>Copyright &copy; 2022 / Ace Tech Advisors</p>
+            <p>Copyright &copy; 2023 / Ace Tech Advisors</p>
         </div>
     </footer>
 
