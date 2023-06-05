@@ -1,0 +1,106 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+nav{
+    display: flex;
+    color: white;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 13vh;
+    background-color: #040720;
+    font-family: 'Zen Antique Soft', cursive;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.navlinks{
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+}
+
+.navlinks li{
+    list-style: none;
+}
+
+.navlinks a{
+    color: white;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+body{
+    background: #111;
+    height: 1%;
+    width: 100%;
+    font-family: "Open Sans";
+    padding-top: 40px;
+    color: white;
+}
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.content h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 5rem;
+    font-family: 'Zen Antique Soft', cursive;
+}
+
+.content p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14 px;
+}
+
+.links{
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 1rem 0 3rem 0;
+}
+
+.links li{
+    margin: 0 10px;
+}
+
+.links a{
+    text-decoration: none;
+    color: white;
+}
+
+.links a i{
+    font-size: 1.1rem;
+    transition: color .4s ease;
+}
+
+.links a:hover i{
+    color: skyblue;
+}
+
+.copyright{
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    background: #000;
+}

@@ -1,0 +1,63 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+nav{
+    display: flex;
+    color: white;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 13vh;
+    background-color: #040720;
+    font-family: 'Zen Antique Soft', cursive;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+}
+
+.logo{
+    color: rgb(238, 238, 238);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 24px;
+}
+
+.journey{
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    background-color: black;
+    font-family: 'Gideon Roman', cursive;
+    text-align: center;
+    font-size: 30px;
+    padding: 5%;
+}
+
+a{
+    display: inline-block;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    height: 1vh;
+    background-color: black;
+    font-family: 'Gideon Roman', cursive;
+    text-align: center;
+    font-size: 30px;
+    padding: 5%;
+    text-decoration: none;
+    transition: color .5s ease;
+}
+
+a:hover{
+    color: crimson;
+    text-shadow: 0 2px 20px crimson;
+}
+
+#footer {
+    text-align: center;
+    background-color: black;
+}

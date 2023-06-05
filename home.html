@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="homestyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gideon+Roman&family=Zen+Antique+Soft&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+
+
+p2 { 
+  text-align: center;
+  margin: 15px 32px;
+  color: black;
+}
+td {
+  font-family:sans-serif;
+}
+td {
+  font-family:verdana;
+}
+td {
+  text-align:center;
+  margin: 15px 20px;
+}
+h1 {
+  color: black;
+}
+p {
+  color: #fff;
+}
+
+.button {
+  background-color: FloralWhite;
+  border: none;
+  color: white;
+  padding: 13px 37px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 20px 450px;
+  cursor: pointer;
+}
+a:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: Black;
+  background-color: transparent;
+  text-decoration: none;
+}
+table {
+   height: 400px;
+   width: 450px;
+   background: linear-gradient() 
+}
+td {
+   font-size: 16px;
+} 
+
+td {
+   color: black;
+}  
+</style>
+</head>
+<body>
+
+
+    <nav>
+        <div class="logo">
+            <h3><a href="my website.html">Ace Tech Advisors</h3></a>
+    </div>
+    <ul class="navlinks">
+        <li>
+            <a href="home.html">Home</a>
+        </li>
+        <li>
+            <a href="about.html">About</a>
+        </li>
+        <li>
+            <a href="contact.html">Contact</a>
+        </li>
+    </ul>
+    </nav>
+
+    <section style="height: 700px; background-image: url(https://i.ibb.co/dczw952/ace-2.png); background-repeat: no-repeat; background-size: cover;">
+	
+	<form method="GET">
+<p2 style="font-family:verdana;">ANSWER HONESTLY.</p2>
+
+<form name="submit-to-google-sheet">
+  <input name="email" type="email" placeholder="Email" required>
+  <button type="submit">Send</button>
+</form>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxcO876KubmhQ6nlLXyTYoNa_Fsq8mBeTEdfNluuIjNYlTCmnTghgDRD1fpO4F9ooD0zA/exec'
+    const form = document.querySelector('#form')
+    const btn = document.querySelector('#submit')
+
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      btn.disabled = true
+      btn.innerHTML = "Loading..."
+
+      console.log(form)
+      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => { 
+              btn.disabled = false
+      btn.innerHTML = "Submit"
+            alert('Success!', response) })
+        .catch(error => {
+                     btn.disabled = false
+      btn.innerHTML = "Submit"
+            alert('Error!', error.message)})
+    })
+</script>
+
+    </section>
+	
+
+
+    <footer>
+        <div class="content">
+            <h3>The Beginning</h3>
+            <p>Welcome to the beginning of your journey. <br>
+               Observe from the hills, look at each and every view from different places. <br>
+               It is truly exhilarating, I humbly request to travel as you please.</p>
+            <ul class="links"> 
+                <li><a href="https://www.facebook.com/profile.php?id=100091789145422"><i class="fa fa-facebook"></i></a></li>
+            </ul>
+        </div>
+        
+        <div class="copyright">
+            <p>Copyright &copy; 2022 / Ace Tech Advisors</p>
+        </div>
+    </footer>
+
+</body>
+</html>
